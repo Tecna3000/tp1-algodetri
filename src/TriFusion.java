@@ -6,22 +6,25 @@ public class TriFusion {
     public static LinkedList<Integer> triParFusion(LinkedList<Integer> list) {
         LinkedList<Integer> left = new LinkedList();
         LinkedList<Integer> right = new LinkedList();
-        LinkedList<Integer> listSorted = new LinkedList();
+        LinkedList<Integer> leftsorted = new LinkedList();
+        LinkedList<Integer> rightsorted = new LinkedList();
+        LinkedList<Integer> listMerged = new LinkedList();
         if (list.size()>1) {
-
             for (int i = 0; i < list.size() / 2; i++) {
-                left.add(list.getFirst());
+                left.add(list.get(i));
             }
-            for (int i = list.size() / 2; i < list.size(); i++) {
-                right.add(list.getFirst());
+            for (int j = list.size() / 2; j < list.size(); j++) {
+                right.add(list.get(j));
             }
+
+            leftsorted = triParFusion(left);
+            rightsorted = triParFusion(right);
+            listMerged = fusion(leftsorted, rightsorted);
         }
-
-        LinkedList<Integer> leftSorted = triParFusion(left);
-        LinkedList<Integer> rightSorted = triParFusion(right);
-
-
-        return listSorted;
+        else{
+            return list;
+        }
+        return listMerged;
     }
 
     public static LinkedList <Integer> fusion(LinkedList<Integer> left, LinkedList<Integer> right){
@@ -29,14 +32,24 @@ public class TriFusion {
         int i = 0;
         int j = 0;
         while (i < left.size() && j < right.size() ) {
-            if (left.getFirst() <= right.getFirst()) {
-                mergedList.add(left.getFirst());
+            if (left.get(i) <= right.get(j)) {
+                mergedList.add(left.get(i));
                 i++;
             } else {
-                mergedList.add(right.getFirst());
+                mergedList.add(right.get(j));
                 j++;
             }
         }
+
+        while (i < left.size()){
+            mergedList.add(left.get(i));
+            i++;
+        }
+        while (j < right.size()){
+            mergedList.add(right.get(j));
+            j++;
+        }
+
         return mergedList;
     }
 

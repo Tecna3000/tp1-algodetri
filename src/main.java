@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Random;
 
 public class main {
@@ -6,9 +7,26 @@ public class main {
 
         ArrayList<Integer> myList;
         myList = randomGenerator(10,50,0);
-        System.out.println(myList);
+        LinkedList<Integer> linked = new LinkedList<>();
+        linked.addAll(myList);
+        System.out.println(linked);
+        LinkedList<Integer> sorted = TriFusion.triParFusion(linked);
+        System.out.println(sorted);
+
+        /*ArrayList<Integer>left = randomGenerator(10,50,0);
+        ArrayList<Integer>right = randomGenerator(10,50,0);
+        LinkedList<Integer> link1= new LinkedList<>();
+        LinkedList<Integer> link2= new LinkedList<>();
+        link1.addAll(left);
+        link2.addAll(right);
+        System.out.println(left);
+        System.out.println(right);
         TriBulle.triParBulle(myList);
-        System.out.println(myList);
+
+        LinkedList<Integer> result = TriFusion.fusion(link1,link2);
+        //System.out.println(myList);
+        System.out.println(result);*/
+
     }
 
     public static ArrayList<Integer> randomGenerator(int length, int max , int min ){
