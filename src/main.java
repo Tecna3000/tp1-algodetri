@@ -11,7 +11,6 @@ public class main {
         TriBulle.triParBulle(myList);
         System.out.println(myList);
 
-
         //tri par fusion
         /*LinkedList<Integer> linked = new LinkedList<>();
         linked.addAll(myList);
