@@ -21,8 +21,5 @@ public class TriBulle {
         list.set(i,list.get(j));
         list.set(j,first);
     }
-
-
-
 }
 
