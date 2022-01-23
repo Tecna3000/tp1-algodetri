@@ -9,15 +9,16 @@ public class TriFusion {
         LinkedList<Integer> rightSorted ;
         LinkedList<Integer> listMerged ;
         if (list.size()>1) {
+            //diviser en deux sous-listes
             for (int i = 0; i < list.size() / 2; i++) {
                 left.add(list.get(i));
             }
             for (int j = list.size() / 2; j < list.size(); j++) {
                 right.add(list.get(j));
             }
-            leftSorted = triParFusion(left);
+            leftSorted = triParFusion(left); // trier la liste de gauche
             rightSorted = triParFusion(right);
-            listMerged = fusion(leftSorted, rightSorted);
+            listMerged = fusion(leftSorted, rightSorted); // fusionner les deux sous listes triés
         }
         else{
             return list;
@@ -38,6 +39,7 @@ public class TriFusion {
                 j++;
             }
         }
+        // ajouter les élements restants
         while (i < left.size()){
             mergedList.add(left.get(i));
             i++;
