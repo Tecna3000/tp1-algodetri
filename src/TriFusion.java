@@ -53,6 +53,23 @@ public class TriFusion {
     }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /*fusion avec getfirst
     public static LinkedList<Integer> merge(LinkedList<Integer> left, LinkedList<Integer> right) {
         LinkedList<Integer> list = new LinkedList<>();
