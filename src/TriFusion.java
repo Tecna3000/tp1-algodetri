@@ -1,4 +1,5 @@
 import java.util.LinkedList;
+import java.util.ListIterator;
 
 public class TriFusion {
 
@@ -50,4 +51,27 @@ public class TriFusion {
         }
         return mergedList;
     }
+
+
+    /*fusion avec getfirst
+    public static LinkedList<Integer> merge(LinkedList<Integer> left, LinkedList<Integer> right) {
+        LinkedList<Integer> list = new LinkedList<>();
+        ListIterator<Integer> iterator1 = left.listIterator();
+        ListIterator iterator2 = right.listIterator();
+        int n1 = it1.hasNext() ? it1.next() : 0, n2 = it2.hasNext() ? it2.next() : 0;
+        for (int i = 0, i1 = 0, i2 = 0, sz1 = list1.size(), sz2 = list2.size(), sz = sz1 + sz2; i < sz; i++) {
+            if (i1 < sz1 && (i2 == sz2 || n1 < n2)) {
+                list.add(n1);
+                i1++;
+                n1 = it1.hasNext() ? it1.next() : 0;
+            } else {
+                list.add(n2);
+                i2++;
+                n2 = it2.hasNext() ? it2.next() : 0;
+            }
+        }
+        return list;
+    }*/
 }
+
+

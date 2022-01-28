@@ -28,5 +28,4 @@ public class main {
         }
         return list;
     }
-
 }

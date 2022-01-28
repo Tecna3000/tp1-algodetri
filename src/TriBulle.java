@@ -15,7 +15,7 @@ public class TriBulle {
                 }
             }
     }
-
+    // méthode pour permuter deux éléments dans une liste
     static void permute(ArrayList<Integer> list,int i,int j){
         int first = list.get(i);
         list.set(i,list.get(j));
