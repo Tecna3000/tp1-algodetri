@@ -5,10 +5,15 @@ import java.util.Random;
 public class main {
     public static void main(String args[]) {
 
-        ArrayList<Integer> myList;
+        /*ArrayList<Integer> myList;
         myList = randomGenerator(10,50,0);
         System.out.println(myList);
         TriBulle.triParBulle(myList);
+        System.out.println(myList);*/
+        ArrayList<Integer> myList;
+        myList = randomGenerator(10,50,0);
+        System.out.println(myList);
+        TriRapide.triRapide(myList);
         System.out.println(myList);
 
         //tri par fusion
