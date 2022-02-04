@@ -1,40 +1,37 @@
 import java.util.ArrayList;
 
 public class TriRapide {
-    public static void triRapide(ArrayList<Integer> list, int smaller, int bigger){
-        if(smaller<bigger)
+    public static void triRapide(ArrayList<Integer> list, int smallerPos, int biggerPos){
+        if(smallerPos<biggerPos)
         {
-            int pivotposition =partition(list,smaller,bigger);
-            triRapide(list,smaller,pivotposition-1);
-            triRapide(list,pivotposition+1,bigger);
+            int pivotPosition =partition(list,smallerPos,biggerPos);
+            triRapide(list,smallerPos,pivotPosition-1);
+            triRapide(list,pivotPosition+1,biggerPos);
         }
-
+        System.out.println(list);
     }
 
-    public static int partition (ArrayList<Integer> list, int smaller, int bigger){
+    public static int partition (ArrayList<Integer> list, int smallerPos, int biggerPos){
 
-        int pivot = list.get(0);
-        smaller = 1;
-        int n = list.size();
-        int i = 1;
+        int pivotPos =0;
+        int i =  1;
+        int n = biggerPos;
+        while(i <= n-1){
 
-        while(i <=n-1){
-            if(list.get(i)==pivot){
-            i++;
+            if (list.get(i)< list.get(pivotPos)){
+                permute(list,i,pivotPos);
+                i++;
             }
-            if (list.get(i)> pivot){
-                permute(list,i,i+1);
+            else if(list.get(i) >list.get(pivotPos)){
+                permute(list,i, n-1);
                 n--;
             }
-            if(list.get(i) <pivot){
-                permute(list,i, i-1);
+            else{
+                pivotPos++;
                 i++;
-                list.set(i-1,pivot);
-                smaller++;
-
             }
         }
-        return pivot;
+        return pivotPos;
     }
 
     // méthode pour permuter deux éléments dans une liste

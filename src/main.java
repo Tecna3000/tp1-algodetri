@@ -13,7 +13,7 @@ public class main {
         ArrayList<Integer> myList;
         myList = randomGenerator(10,50,0);
         System.out.println(myList);
-        TriRapide.triRapide(myList,0,10);
+        TriRapide.triRapide(myList,0,9);
         System.out.println(myList);
 
         //tri par fusion
