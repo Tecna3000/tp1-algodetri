@@ -1,14 +1,20 @@
 import java.util.ArrayList;
 
 public class TriRapide {
-    public static void triRapide(ArrayList<Integer> list){
-     partition(list);
+    public static void triRapide(ArrayList<Integer> list, int smaller, int bigger){
+        if(smaller<bigger)
+        {
+            int pivotposition =partition(list,smaller,bigger);
+            triRapide(list,smaller,pivotposition-1);
+            triRapide(list,pivotposition+1,bigger);
+        }
+
     }
 
-    public static void partition (ArrayList<Integer> list){
+    public static int partition (ArrayList<Integer> list, int smaller, int bigger){
 
         int pivot = list.get(0);
-        int smaller = 1;
+        smaller = 1;
         int n = list.size();
         int i = 1;
 
@@ -21,15 +27,14 @@ public class TriRapide {
                 n--;
             }
             if(list.get(i) <pivot){
-                permute(list,i, 1-1);
+                permute(list,i, i-1);
                 i++;
                 list.set(i-1,pivot);
+                smaller++;
+
             }
-
-
         }
-
-
+        return pivot;
     }
 
     // méthode pour permuter deux éléments dans une liste
