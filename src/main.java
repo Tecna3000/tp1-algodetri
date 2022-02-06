@@ -13,8 +13,12 @@ public class main {
         ArrayList<Integer> myList;
         myList = randomGenerator(10,50,0);
         System.out.println(myList);
+        //triParTas
+       ArrayList<Integer> sorted =TriParTas.triParTas(myList);
+        System.out.println(sorted);
+        /*//triRapide
         TriRapide.triRapide(myList,0,9);
-        System.out.println(myList);
+        System.out.println(myList);*/
 
         //tri par fusion
         /*LinkedList<Integer> linked = new LinkedList<>();
