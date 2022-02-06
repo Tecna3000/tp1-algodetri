@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class TriBulle {
-    static void triParBulle(ArrayList<Integer> myList){
+public class BubbleSort {
+    static void bubbleSort(ArrayList<Integer> myList){
             int length =  myList.size();
             for(int i=0; i < length; i++) {
                 for(int j=1; j < (length-i); j++) {

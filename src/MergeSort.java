@@ -1,9 +1,8 @@
 import java.util.LinkedList;
-import java.util.ListIterator;
 
-public class TriFusion {
+public class MergeSort {
 
-    public static LinkedList<Integer> triParFusion(LinkedList<Integer> list) {
+    public static LinkedList<Integer> mergeSort(LinkedList<Integer> list) {
         LinkedList<Integer> left = new LinkedList<>();
         LinkedList<Integer> right = new LinkedList<>();
         LinkedList<Integer> leftSorted ;
@@ -17,8 +16,8 @@ public class TriFusion {
             for (int j = list.size() / 2; j < list.size(); j++) {
                 right.add(list.get(j));
             }
-            leftSorted = triParFusion(left); // trier la liste de gauche
-            rightSorted = triParFusion(right);
+            leftSorted = mergeSort(left); // trier la liste de gauche
+            rightSorted = mergeSort(right);
             listMerged = fusion(leftSorted, rightSorted); // fusionner les deux sous listes triés
         }
         else{

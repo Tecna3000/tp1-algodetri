@@ -1,14 +1,13 @@
 import java.util.ArrayList;
 
-public class TriRapide {
-    public static ArrayList< Integer> triRapide(ArrayList<Integer> list, int start, int end){
+public class QuickSort {
+    public static void quickSort(ArrayList<Integer> list, int start, int end){
         if(start<end)
         {
             int pivotPosition =partition(list,start,end,start);
-            triRapide(list,start,pivotPosition-1);
-            triRapide(list,pivotPosition+1,end);
+            quickSort(list,start,pivotPosition-1);
+            quickSort(list,pivotPosition+1,end);
         }
-       return list;
     }
 
     public static int partition (ArrayList<Integer> list, int start, int end, int pivot){
