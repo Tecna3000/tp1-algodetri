@@ -1,22 +1,21 @@
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class QuickSort {
     public static void quickSort(ArrayList<Integer> list){
         quickSortMain(list,0,list.size());
     }
     public static void quickSortMain(ArrayList<Integer> list, int start, int end){
-        if(start<end)
-        {
-            int pivotPosition =partition(list,end,start);
-            quickSortMain(list,start,pivotPosition-1);
-            quickSortMain(list,pivotPosition+1,end);
+        if (start<=end) {
+            int pivotPosition = partition(list, end, start);
+            quickSortMain(list, start, pivotPosition - 1);
+            quickSortMain(list, pivotPosition + 1, end);
         }
     }
-
     public static int partition (ArrayList<Integer> list,int end, int pivot){
 
         int  smallerPos = pivot;
-        int cmp = pivot + 1;
+        int cmp = pivot+1;
         int biggerPos = end;
         while(cmp<biggerPos){
 
