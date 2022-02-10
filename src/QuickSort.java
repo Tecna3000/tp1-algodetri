@@ -1,13 +1,19 @@
 import java.util.ArrayList;
 
 public class QuickSort {
-    public static void quickSort(ArrayList<Integer> list, int start, int end){
+    public static void quickSort(ArrayList<Integer> list){
+        quickSortmain(list,0,list.size()-1);
+
+
+    }
+    public static void quickSortmain(ArrayList<Integer> list, int start, int end){
         if(start<end)
         {
             int pivotPosition =partition(list,start,end,start);
-            quickSort(list,start,pivotPosition-1);
-            quickSort(list,pivotPosition+1,end);
+            quickSortmain(list,start,pivotPosition-1);
+            quickSortmain(list,pivotPosition+1,end);
         }
+
     }
 
     public static int partition (ArrayList<Integer> list, int start, int end, int pivot){
