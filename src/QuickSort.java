@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class QuickSort {
     public static void quickSort(ArrayList<Integer> list){
-        quickSortMain(list,0,list.size()-1);
+        quickSortMain(list,0,list.size());
     }
     public static void quickSortMain(ArrayList<Integer> list, int start, int end){
         if(start<end)
@@ -17,7 +17,7 @@ public class QuickSort {
 
         int  smallerPos = pivot;
         int cmp = pivot + 1;
-        int biggerPos = end+1;
+        int biggerPos = end;
         while(cmp<biggerPos){
 
             if (list.get(cmp)< list.get(pivot)){
