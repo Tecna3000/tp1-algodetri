@@ -2,21 +2,18 @@ import java.util.ArrayList;
 
 public class QuickSort {
     public static void quickSort(ArrayList<Integer> list){
-        quickSortmain(list,0,list.size()-1);
-
-
+        quickSortMain(list,0,list.size()-1);
     }
-    public static void quickSortmain(ArrayList<Integer> list, int start, int end){
+    public static void quickSortMain(ArrayList<Integer> list, int start, int end){
         if(start<end)
         {
-            int pivotPosition =partition(list,start,end,start);
-            quickSortmain(list,start,pivotPosition-1);
-            quickSortmain(list,pivotPosition+1,end);
+            int pivotPosition =partition(list,end,start);
+            quickSortMain(list,start,pivotPosition-1);
+            quickSortMain(list,pivotPosition+1,end);
         }
-
     }
 
-    public static int partition (ArrayList<Integer> list, int start, int end, int pivot){
+    public static int partition (ArrayList<Integer> list,int end, int pivot){
 
         int  smallerPos = pivot;
         int cmp = pivot + 1;
