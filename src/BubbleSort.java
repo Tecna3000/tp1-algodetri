@@ -8,9 +8,6 @@ public class BubbleSort {
                 for(int j=1; j < (length-i); j++) {
                     if (myList.get(j - 1) > myList.get(j)) {
                         permute(myList,j,j-1);
-                        /* int first = myList.get(j-1);
-                        myList.set(j-1,myList.get(j));
-                        myList.set(j, first);*/
                     }
                 }
             }
@@ -22,4 +19,4 @@ public class BubbleSort {
         list.set(j,first);
     }
 }
-
+ //O(n²)

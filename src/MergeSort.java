@@ -18,15 +18,15 @@ public class MergeSort {
             }
             leftSorted = mergeSort(left); // trier la liste de gauche
             rightSorted = mergeSort(right);
-            listMerged = fusion(leftSorted, rightSorted); // fusionner les deux sous listes triés
+            listMerged = merge(leftSorted, rightSorted); // fusionner les deux sous listes triés
         }
         else{
             return list;
         }
         return listMerged;
     }
-
-    public static LinkedList <Integer> fusion(LinkedList<Integer> left, LinkedList<Integer> right){
+ // methode pour fusionner deux listes
+    public static LinkedList <Integer> merge(LinkedList<Integer> left, LinkedList<Integer> right){
         LinkedList<Integer> mergedList = new LinkedList<>();
         int i = 0;
         int j = 0;
@@ -50,9 +50,6 @@ public class MergeSort {
         }
         return mergedList;
     }
-
-
-
 }
-
+//O(n log n)
 

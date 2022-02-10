@@ -27,9 +27,10 @@ public class QuickSort {
                 permute(list,cmp, biggerPos-1);
                 biggerPos--;
             }
-            else{
+            else {
                 pivot++;
                 cmp++;
+
             }
         }
         return pivot;
@@ -42,3 +43,4 @@ public class QuickSort {
         list.set(j,first);
     }
 }
+//O(n log n)

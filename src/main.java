@@ -1,27 +1,26 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Random;
 
 public class main {
     public static void main(String args[]) {
         ArrayList<Integer> myList;
-        myList = randomGenerator(10,50,0);
+        myList = randomGenerator(15,10,0);
         System.out.println(myList);
-
-        /*ArrayList<Integer> myList;
-        myList = randomGenerator(10,50,0);
-        System.out.println(myList);
-        BubbleSort.bubbleSort(myList);
+        //tri par bulle
+        /*BubbleSort.bubbleSort(myList);
         System.out.println(myList);*/
 
        //triParTas
-        ArrayList<Integer> sorted =HeapSort.heapSort(myList);
-        System.out.println(sorted);
-        /*//triRapide
+        /*ArrayList<Integer> sorted =HeapSort.heapSort(myList);
+        System.out.println(sorted);*/
+
+        //triRapide
         QuickSort.quickSort(myList,0,9);
-        System.out.println(myList);*/
+        System.out.println(myList);
 
         //tri par fusion
-        /*LinkedList<Integer> linked = new LinkedList<>();
+       /* LinkedList<Integer> linked = new LinkedList<>();
         linked.addAll(myList);
         System.out.println(linked);
         LinkedList<Integer> sorted = MergeSort.mergeSort(linked);
