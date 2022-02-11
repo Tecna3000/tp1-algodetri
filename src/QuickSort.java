@@ -29,7 +29,7 @@ public class QuickSort {
                 permute(list,cmp, biggerPos-1);
                 biggerPos--;
             }
-            else {
+            else if((list.get(cmp).equals(list.get(pivot)))){
                 pivot++;
                 cmp++;
 
