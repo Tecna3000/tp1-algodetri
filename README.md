@@ -1,4 +1,4 @@
-# Tp1 AlgoTri
+# Tp1 Algo de Tri
 ### Sorting methodes in java:
 - Buble sort
 - Quick sort
